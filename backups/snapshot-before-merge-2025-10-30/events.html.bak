@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Events</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dropdown.css" />
+</head>
+<body>
+  <nav class="navbar glass" aria-label="Main navigation">
+    <div class="brand">
+      <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <a class="logo" href="index.html">🎵 VIRTUAL CONCERT VENUE</a>
+    </div>
+
+    <ul id="navMenu" class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="events.html" class="nav-link active">Events</a></li>
+      <li><a href="highlights.html" class="nav-link">Highlights</a></li>
+
+      <li class="nav-spacer" aria-hidden="true"></li>
+      <li class="account-links">
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="register.html" class="nav-link">Register</a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero events-hero" id="genreHero">
+    <div class="hero-inner">
+      <h1>Select Your Genre & Country</h1>
+      <div class="filter-bar glass" role="region" aria-label="Filters">
+        <div class="dropdown" id="genreDropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">🎧 Genre <span>▼</span></button>
+          <div class="dropdown-content" role="menu">
+            <div role="menuitem" data-genre="all" tabindex="0">🎶 All Genres</div>
+            <div role="menuitem" data-genre="pop" tabindex="0">💖 Pop</div>
+            <div role="menuitem" data-genre="edm" tabindex="0">⚡ EDM</div>
+            <div role="menuitem" data-genre="rock" tabindex="0">🎸 Rock</div>
+            <div role="menuitem" data-genre="jazz" tabindex="0">🎷 Jazz</div>
+          </div>
+        </div>
+
+        <div class="dropdown" id="countryDropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">🌍 Country <span>▼</span></button>
+          <div class="dropdown-content" role="menu">
+            <div role="menuitem" data-country="all" tabindex="0">🌍 All Countries</div>
+            <div role="menuitem" data-country="USA" tabindex="0">🇺🇸 USA</div>
+            <div role="menuitem" data-country="UK" tabindex="0">🇬🇧 UK</div>
+            <div role="menuitem" data-country="Belgium" tabindex="0">🇧🇪 Belgium</div>
+            <div role="menuitem" data-country="France" tabindex="0">🇫🇷 France</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="event-grid" id="eventGrid" aria-live="polite">
+      <!-- events rendered by script.js -->
+    </section>
+  </main>
+
+  <footer>© <span id="yearEvents"></span> Virtual Concert Venue</footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

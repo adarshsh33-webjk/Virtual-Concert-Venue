@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="page-backgrounds.css" />
+</head>
+<body class="login-page">
+  <nav class="navbar glass" aria-label="Main navigation">
+    <div class="brand">
+      <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <a class="logo" href="index.html">🎵 VIRTUAL CONCERT VENUE</a>
+    </div>
+
+    <ul id="navMenu" class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="events.html" class="nav-link">Events</a></li>
+      <li><a href="highlights.html" class="nav-link">Highlights</a></li>
+      <li class="nav-spacer" aria-hidden="true"></li>
+      <li class="account-links">
+        <a href="login.html" class="nav-link active">Login</a>
+        <a href="register.html" class="nav-link">Register</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="form-container glass" role="form" aria-labelledby="loginTitle">
+      <h2 id="loginTitle">Login</h2>
+      <form id="loginForm" novalidate>
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="you@example.com" required />
+
+        <label for="loginPassword">Password</label>
+        <input id="loginPassword" type="password" placeholder="••••••••" required minlength="6" />
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <p>Don’t have an account? <a href="register.html">Register</a></p>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

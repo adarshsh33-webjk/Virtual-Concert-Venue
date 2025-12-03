@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Highlights</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar glass" aria-label="Main navigation">
+    <div class="brand">
+      <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <a class="logo" href="index.html">🎵 VIRTUAL CONCERT VENUE</a>
+    </div>
+    
+    <ul id="navMenu" class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="events.html" class="nav-link">Events</a></li>
+      <li><a href="highlights.html" class="nav-link active">Highlights</a></li>
+
+      <li class="nav-spacer" aria-hidden="true"></li>
+      <li class="search-wrap">
+        <label for="highlightsSearch" class="sr-only">Search highlights</label>
+        <input id="highlightsSearch" class="search-input" type="search" placeholder="Search highlights, stages, artists..." aria-label="Search highlights" />
+      </li>
+
+      <li class="account-links">
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="register.html" class="nav-link">Register</a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero highlight-hero">
+    <div class="hero-inner">
+      <h1>Concert Highlights</h1>
+      <p>Catch glimpses from the biggest music festivals across the world.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="highlight-grid" aria-label="Highlights gallery" id="highlightGrid">
+      <!-- highlights (images) rendered and searchable by script.js -->
+    </section>
+  </main>
+
+  <footer>© <span id="yearHighlights"></span> Virtual Concert Venue</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

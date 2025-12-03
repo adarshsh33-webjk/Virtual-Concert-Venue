@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Concert Venue | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+  <nav class="navbar">
+    <div class="logo">🎵 Virtual Venue</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="highlights.html">Highlights</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Sign Up</a></li>
+      <li><button id="themeToggle" class="theme-toggle">🌙</button></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Experience the World's Biggest Concerts — Virtually</h1>
+      <p>Discover global music events, genres, and venues — all in one place.</p>
+      <a href="events.html" class="cta-btn">Explore Events</a>
+    </div>
+  </section>
+
+  <!-- Trending Concerts -->
+  <section class="concerts-section">
+    <h2>🔥 Trending Concerts</h2>
+    <div class="concert-grid">
+
+      <div class="concert-card" onclick="goToGenre('edm')">
+        <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=800&q=60" alt="Tomorrowland">
+        <div class="concert-info">
+          <h3>Tomorrowland</h3>
+          <p>Boom, Belgium • Jul 18, 2025</p>
+          <p>🎧 EDM</p>
+        </div>
+      </div>
+
+      <div class="concert-card" onclick="goToGenre('pop')">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=60" alt="Coachella">
+        <div class="concert-info">
+          <h3>Coachella</h3>
+          <p>Indio, USA • Apr 12, 2025</p>
+          <p>🎤 Pop</p>
+        </div>
+      </div>
+
+      <div class="concert-card" onclick="goToGenre('rock')">
+        <img src="https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=800&q=60" alt="Rock in Rio">
+        <div class="concert-info">
+          <h3>Rock in Rio</h3>
+          <p>Rio de Janeiro, Brazil • Sep 18, 2025</p>
+          <p>🎸 Rock</p>
+        </div>
+      </div>
+
+      <div class="concert-card" onclick="goToGenre('jazz')">
+        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=60" alt="Montreux Jazz Fest">
+        <div class="concert-info">
+          <h3>Montreux Jazz Festival</h3>
+          <p>Montreux, France • Jul 5, 2025</p>
+          <p>🎷 Jazz</p>
+        </div>
+      </div>
+
+      <div class="concert-card" onclick="goToGenre('hiphop')">
+        <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=800&q=60" alt="Rolling Loud">
+        <div class="concert-info">
+          <h3>Rolling Loud</h3>
+          <p>Miami, USA • May 10, 2025</p>
+          <p>🎧 Hip-Hop</p>
+        </div>
+      </div>
+
+      <div class="concert-card" onclick="goToGenre('classical')">
+        <img src="https://images.unsplash.com/photo-1511376777868-611b54f68947?auto=format&fit=crop&w=800&q=60" alt="BBC Proms">
+        <div class="concert-info">
+          <h3>BBC Proms</h3>
+          <p>London, UK • Aug 22, 2025</p>
+          <p>🎻 Classical</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Virtual Concert Venue. All rights reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

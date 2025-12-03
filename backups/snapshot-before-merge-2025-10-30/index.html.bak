@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual Concert Venue | Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar glass" aria-label="Main navigation">
+    <div class="brand">
+      <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <a class="logo" href="index.html">🎵 VIRTUAL CONCERT VENUE</a>
+    </div>
+
+    <ul id="navMenu" class="nav-links">
+      <li><a href="index.html" class="nav-link active">Home</a></li>
+      <li><a href="events.html" class="nav-link">Events</a></li>
+      <li><a href="highlights.html" class="nav-link">Highlights</a></li>
+      <li class="nav-spacer" aria-hidden="true"></li>
+      <li class="search-wrap">
+        <label for="homeSearch" class="sr-only">Search events</label>
+        <input id="homeSearch" class="search-input" type="search" placeholder="Search events, artists, venues..." aria-label="Search events on home" />
+      </li>
+      <li class="account-links">
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="register.html" class="nav-link">Register</a>
+      </li>
+    </ul>
+  </nav>
+
+  <header class="hero home-hero" id="hero">
+    <div class="hero-inner">
+      <h1>Welcome to the Virtual Concert Experience</h1>
+      <p>Vibrant live shows, festivals & curated highlights — designed for ages 16–40.</p>
+      <a href="events.html" class="cta">Browse Events</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="event-grid" aria-label="Featured events" id="homeEvents">
+      <!-- rendered by script.js -->
+    </section>
+  </main>
+
+  <footer>© <span id="yearHome"></span> Virtual Concert Venue. All Rights Reserved.</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

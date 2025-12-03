@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="register-bg">
+  <nav class="navbar glass" aria-label="Main navigation">
+    <div class="brand">
+      <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <a class="logo" href="index.html">🎵 VIRTUAL CONCERT VENUE</a>
+    </div>
+
+    <ul id="navMenu" class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="events.html" class="nav-link">Events</a></li>
+      <li><a href="highlights.html" class="nav-link">Highlights</a></li>
+      <li class="nav-spacer" aria-hidden="true"></li>
+      <li class="account-links">
+        <a href="login.html" class="nav-link">Login</a>
+        <a href="register.html" class="nav-link active">Register</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="form-container glass" role="form" aria-labelledby="registerTitle">
+      <h2 id="registerTitle">Create your account</h2>
+      <form id="registerForm" novalidate>
+        <label for="regName">Name</label>
+        <input id="regName" type="text" placeholder="Your name" required />
+
+        <label for="regEmail">Email</label>
+        <input id="regEmail" type="email" placeholder="you@example.com" required />
+
+        <label for="regPassword">Password</label>
+        <input id="regPassword" type="password" placeholder="••••••••" required minlength="6" />
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

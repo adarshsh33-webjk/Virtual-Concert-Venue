@@ -1,0 +1,132 @@
+(script.js backup)
+
+/* Full script.js backup — saved for safe restore. */
+
+/* script.js
+	 - Handles site-wide genre background persistence
+	 - Renders events and highlights
+	 - Filters (genre + country) on Events page (dropdown + select)
+	 - Search on Home + Highlights pages
+	 - Responsive navbar + dropdown interactions
+	 - Accessibility-safe DOM guards
+*/
+
+const EVENTS = [
+	{
+		id: 'taylor-eras',
+		name: "Taylor Swift – The Eras Tour",
+		genre: "pop",
+		country: "UK",
+		img: "\"C:\\Users\\adars\\OneDrive\\Desktop\\taylor swift performing .png\"",
+		venue: "Wembley Stadium, London | Aug 22, 2025",
+		map: "https://www.google.com/maps?q=Wembley%20Stadium%20London&output=embed",
+		featured: true,
+		tags: ['taylor', 'swift', 'eras', 'pop']
+	},
+	{
+		id: 'tomorrowland',
+		name: "Tomorrowland 2025",
+		genre: "edm",
+		country: "Belgium",
+		img: "https://i.imgur.com/H3pV7Wr.jpg",
+		venue: "Boom, Belgium | Jul 18–27, 2025",
+		map: "https://www.google.com/maps?q=Boom%20Belgium&output=embed",
+		featured: true,
+		tags: ['tomorrowland', 'edm', 'festival']
+	},
+	{
+		id: 'coachella',
+		name: "Coachella 2025",
+		genre: "rock",
+		country: "USA",
+		img: "https://i.imgur.com/SK7qVgo.jpg",
+		venue: "Indio, California | Apr 11–20, 2025",
+		map: "https://www.google.com/maps?q=Indio%20California&output=embed",
+		featured: true,
+		tags: ['coachella', 'rock', 'festival']
+	},
+	{
+		id: 'jazz-paris',
+		name: "Jazz in Paris",
+		genre: "jazz",
+		country: "France",
+		img: "https://i.imgur.com/kKzoZre.jpg",
+		venue: "Paris, France | Sep 12, 2025",
+		map: "https://www.google.com/maps?q=Paris%20France&output=embed",
+		featured: false,
+		tags: ['jazz', 'paris', 'france']
+	},
+	{
+		id: 'indie-night',
+		name: "Indie Night Live",
+		genre: "rock",
+		country: "USA",
+		img: "https://i.imgur.com/7Kc0VYQ.jpg",
+		venue: "Brooklyn, NY | May 5, 2025",
+		map: "https://www.google.com/maps?q=Brooklyn%20NY&output=embed",
+		featured: false,
+		tags: ['indie', 'rock', 'brooklyn']
+	},
+	{
+		id: 'edm-rave',
+		name: "Neon Rave – EDM Night",
+		genre: "edm",
+		country: "UK",
+		img: "https://i.imgur.com/2p6mRjH.jpg",
+		venue: "Fabric, London | Jun 15, 2025",
+		map: "https://www.google.com/maps?q=Fabric%20London&output=embed",
+		featured: false,
+		tags: ['edm', 'rave', 'fabric']
+	}
+];
+
+/* Background mapping */
+const BG = {
+	edm: "linear-gradient(135deg, rgba(6,0,18,0.65), rgba(12,0,32,0.35)), url('https://i.imgur.com/FnBpxkQ.jpg')",
+	pop: "linear-gradient(135deg, rgba(8,0,18,0.55), rgba(18,8,30,0.28)), url('https://i.imgur.com/Xm1sTE4.jpg')",
+	rock: "linear-gradient(135deg, rgba(0,0,0,0.6), rgba(18,18,18,0.35)), url('https://i.imgur.com/O3ZtwKf.jpg')",
+	jazz: "linear-gradient(135deg, rgba(10,6,18,0.6), rgba(16,10,30,0.34)), url('https://i.imgur.com/Ac8CFhA.jpg')",
+	all: "linear-gradient(135deg,#0f0f0f,#151515)"
+};
+
+/* Utility to persist and load preferred genre */
+function setPreferredGenre(genre) {
+	try { localStorage.setItem('preferredGenre', genre); } catch (e) {}
+}
+function getPreferredGenre() {
+	try { return localStorage.getItem('preferredGenre') || 'all'; } catch (e) { return 'all'; }
+}
+
+/* Apply background to body and hero if present */
+function applyThemeBackground(genre) {
+	const hero = document.getElementById('genreHero') || document.querySelector('.hero');
+	const bg = BG[genre] || BG.all;
+	document.body.style.backgroundImage = BG[genre] || BG.all;
+	// hero gets combined background for contrast
+	if (hero) hero.style.background = `${bg} center/cover no-repeat`;
+}
+
+/* Render helpers */
+function renderEvents(list, containerId = 'eventGrid') {
+	const container = document.getElementById(containerId);
+	if (!container) return;
+	if (!Array.isArray(list) || list.length === 0) {
+		container.innerHTML = `<p style="color:var(--muted);text-align:center;padding:2rem">No events found.</p>`;
+		return;
+	}
+	container.innerHTML = list.map(ev => `
+		<article class="event-card" aria-labelledby="${ev.id}-title">
+			<img src="${ev.img}" alt="${ev.name} image">
+			<div class="card-body">
+				<h3 id="${ev.id}-title">${ev.name}</h3>
+				<p>${ev.venue}</p>
+				<p style="color:var(--muted);margin-bottom:.5rem;font-size:.9rem">${ev.genre.toUpperCase()} • ${ev.country}</p>
+				<div style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);margin-top:.6rem">
+					<iframe class="map" title="Map for ${ev.name}" src="${ev.map}" loading="lazy"></iframe>
+				</div>
+			</div>
+		</article>
+	`).join('');
+}
+
+/* (rest of script.js continues) */

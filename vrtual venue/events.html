@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Virtual Concert Venue | Events</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+  <nav class="navbar">
+    <div class="logo">🎵 Virtual Venue</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="highlights.html">Highlights</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Sign Up</a></li>
+      <li><button id="themeToggle" class="theme-toggle">🌙</button></li>
+    </ul>
+  </nav>
+
+  <section class="filter-bar">
+    <div class="dropdown" id="genreDropdown">
+      <button class="dropbtn">🎧 Genre <span>▼</span></button>
+      <div class="dropdown-content">
+        <div data-genre="edm">🎧 EDM</div>
+        <div data-genre="rock">🎸 Rock</div>
+        <div data-genre="jazz">🎷 Jazz</div>
+        <div data-genre="pop">🎤 Pop</div>
+        <div data-genre="classical">🎻 Classical</div>
+        <div data-genre="hiphop">🎧 Hip-Hop</div>
+      </div>
+    </div>
+
+    <div class="dropdown" id="countryDropdown">
+      <button class="dropbtn">🌍 Country <span>▼</span></button>
+      <div class="dropdown-content">
+        <div data-country="usa">🇺🇸 USA</div>
+        <div data-country="uk">🇬🇧 UK</div>
+        <div data-country="france">🇫🇷 France</div>
+        <div data-country="japan">🇯🇵 Japan</div>
+        <div data-country="australia">🇦🇺 Australia</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="eventList" class="event-list">
+    <!-- Events will load dynamically here -->
+  </section>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

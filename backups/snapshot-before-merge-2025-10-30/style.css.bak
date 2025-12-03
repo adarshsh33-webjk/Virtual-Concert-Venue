@@ -1,0 +1,132 @@
+/* Neon Festival theme — Gen Z / Alpha / Millennial friendly */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+	--bg-dark:#08070a;
+	--muted:#cbd5e1;
+	--accent1:#00e0ff;
+	--accent2:#ff00f7;
+	--accent3:#8a2be2;
+	--glass-bg: rgba(255,255,255,0.04);
+	--glass-border: rgba(255,255,255,0.06);
+	--radius:14px;
+	--max-width:1200px;
+}
+
+/* dropdown overrides are imported at the end of this file */
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:"Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+	color:#fff;
+	background: radial-gradient(circle at 10% 10%, #0a0510, #0f0f14 60%);
+	min-height:100vh;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	transition: background 400ms ease;
+}
+
+/* NAVBAR */
+.navbar{
+	position:fixed;
+	left:0;right:0;top:0;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding:0.8rem 1.25rem;
+	gap:1rem;
+	z-index:40;
+	background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(10,10,10,0.2));
+	border-bottom:1px solid rgba(255,255,255,0.03);
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+}
+
+.brand{display:flex;align-items:center;gap:1rem}
+.logo{font-weight:700;color:#fff;text-decoration:none;letter-spacing:.6px}
+.nav-links{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center;width:100%}
+.nav-links a, .nav-link, .search-input, .dropdown-btn{color:#fff;text-decoration:none;padding:0.45rem 0.6rem;border-radius:8px;display:inline-block}
+.nav-links a:hover, .nav-link:focus{color:var(--accent1)}
+.nav-links a.active{color:var(--accent1); box-shadow: 0 8px 30px rgba(0,224,255,0.06);}
+
+.nav-spacer{flex:1}
+
+/* Dropdown */
+.account-dropdown{position:relative}
+.dropdown-btn{background:transparent;border:0;color:inherit;cursor:pointer;padding:0.45rem 0.6rem}
+.dropdown{position:absolute;right:0;top:calc(100% + 8px);background:linear-gradient(180deg, rgba(6,6,8,0.98), rgba(8,8,10,0.98));border-radius:10px;padding:0.5rem;display:none;min-width:200px;border:1px solid var(--glass-border);box-shadow:0 8px 40px rgba(0,0,0,0.6)}
+.dropdown button{background:transparent;border:0;color:var(--muted);width:100%;text-align:left;padding:0.45rem 0.6rem;cursor:pointer}
+.dropdown button:hover{color:var(--accent2)}
+
+/* Hamburger (mobile) */
+.nav-toggle{display:none;background:transparent;border:0;padding:0.25rem;margin-right:4px}
+.hamburger{width:24px;height:2px;background:#fff;display:block;position:relative}
+.hamburger::before,.hamburger::after{content:"";position:absolute;left:0;width:100%;height:2px;background:#fff;transition:transform .25s}
+.hamburger::before{top:-7px}
+.hamburger::after{top:7px}
+
+/* Search */
+.search-wrap{display:flex;align-items:center}
+.search-input{padding:0.45rem 0.6rem;border-radius:999px;border:none;background:rgba(255,255,255,0.04);min-width:220px;color:#fff}
+.search-input::placeholder{color:rgba(255,255,255,0.6)}
+
+/* HERO */
+.hero{padding:6.5rem 1.25rem 3.5rem;text-align:center;transition:background 400ms ease}
+.hero-inner{max-width:var(--max-width);margin:0 auto}
+.hero h1{font-size:clamp(1.6rem,3vw,2.6rem);margin:0 0 0.5rem;text-shadow:0 8px 28px rgba(0,0,0,0.6)}
+.hero p{margin:0 0 1rem;color:var(--muted)}
+.cta{display:inline-block;padding:0.65rem 1rem;border-radius:999px;background-image:linear-gradient(90deg,var(--accent1),var(--accent2));color:#000;font-weight:600;text-decoration:none;box-shadow:0 12px 40px rgba(255,0,200,0.06)}
+
+/* GRID LAYOUTS */
+.event-grid, .highlight-grid{
+	width:90%;
+	max-width:var(--max-width);
+	margin:2.2rem auto;
+	display:grid;
+	gap:1rem;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* Event card */
+.event-card{
+	border-radius:var(--radius);
+	overflow:hidden;
+	background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	border:1px solid var(--glass-border);
+	transition:transform .25s, box-shadow .25s;
+}
+.event-card:hover{transform:translateY(-6px);box-shadow:0 18px 50px rgba(0,0,0,0.6)}
+.event-card img{width:100%;height:180px;object-fit:cover;display:block}
+.event-card .card-body{padding:0.9rem}
+.event-card h3{margin:0 0 .5rem;font-size:1.05rem}
+.event-card p{margin:0 0 .6rem;color:var(--muted);font-size:0.95rem}
+.map{width:100%;height:200px;border:0}
+
+/* Highlight gallery */
+.highlight-grid img{width:100%;height:220px;object-fit:cover;border-radius:12px}
+
+/* FORM */
+.form-container{max-width:420px;margin:6rem auto;padding:1.25rem;border-radius:14px;background:var(--glass-bg);border:1px solid var(--glass-border);text-align:center}
+.form-container input, select{width:94%;padding:0.7rem;margin:.5rem 0;border-radius:10px;border:none;background:rgba(255,255,255,0.06);color:#fff}
+label{display:block;text-align:left;margin-left:3% ;font-size:0.9rem;color:var(--muted)}
+button.btn, .btn{margin-top:.5rem;padding:.7rem 1rem;border-radius:10px;border:none;background-image:linear-gradient(90deg,var(--accent1),var(--accent2));color:#000;cursor:pointer}
+
+/* background hero placeholders so JS can override */
+.home-hero, .events-hero, .highlight-hero { background-position:center; background-size:cover; background-repeat:no-repeat }
+
+/* small helpers */
+.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+footer{padding:2rem;text-align:center;color:var(--muted);margin-top:2rem}
+
+/* Responsive */
+@media (max-width:980px){
+	.nav-links{position:fixed;right:0;top:60px;background:linear-gradient(180deg, rgba(8,8,8,0.98), rgba(6,6,6,0.98));flex-direction:column;padding:1rem;border-radius:10px;margin:0 1rem;display:none}
+	.nav-links.show{display:flex}
+	.nav-toggle{display:inline-flex}
+	.search-input{min-width:160px}
+	.hero{padding-top:5.5rem}
+}
+
+/* dropdown overrides are loaded via a dedicated <link> in pages that need them (events.html) */

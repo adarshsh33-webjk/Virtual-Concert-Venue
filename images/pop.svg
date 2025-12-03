@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="High-energy pop concert background with flashing lights">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0f0126" />
+      <stop offset="45%" stop-color="#3a0066" />
+      <stop offset="100%" stop-color="#ff2fa0" />
+    </linearGradient>
+    <radialGradient id="spot" cx="50%" cy="6%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.98)" />
+      <stop offset="50%" stop-color="rgba(255,255,255,0.06)" />
+      <stop offset="100%" stop-color="rgba(0,0,0,0)" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- main background -->
+  <rect width="1600" height="900" fill="url(#bgGrad)" />
+
+  <!-- dense light beams: many angled rays to create flash effect -->
+  <g stroke-linecap="round" stroke-opacity="0.95" filter="url(#glow)">
+    <!-- left cluster -->
+    <path d="M120 180 L420 780" stroke="#ff9ad2" stroke-width="20" opacity="0.22" />
+    <path d="M180 120 L480 800" stroke="#ffd6a6" stroke-width="16" opacity="0.18" />
+    <path d="M240 80 L540 820" stroke="#9be2ff" stroke-width="12" opacity="0.14" />
+    <!-- center cluster -->
+    <path d="M600 60 L760 820" stroke="#ffffff" stroke-width="28" opacity="0.35" />
+    <path d="M680 40 L820 820" stroke="#ffd7ff" stroke-width="20" opacity="0.28" />
+    <path d="M740 50 L900 820" stroke="#9be2ff" stroke-width="18" opacity="0.22" />
+    <!-- right cluster -->
+    <path d="M1200 160 L860 780" stroke="#ffdf7e" stroke-width="18" opacity="0.2" />
+    <path d="M1280 120 L920 800" stroke="#ffb3ff" stroke-width="14" opacity="0.16" />
+    <path d="M1360 80 L980 820" stroke="#b3fff6" stroke-width="12" opacity="0.12" />
+  </g>
+
+  <!-- pulsing central spotlights -->
+  <g>
+    <circle cx="800" cy="120" r="200" fill="url(#spot)" opacity="0.6" filter="url(#glow)" />
+    <circle cx="700" cy="140" r="140" fill="url(#spot)" opacity="0.45" />
+    <circle cx="900" cy="140" r="140" fill="url(#spot)" opacity="0.45" />
+  </g>
+
+  <!-- stage silhouette (wide) -->
+  <g transform="translate(800,650)" fill="#050308">
+    <rect x="-760" y="-160" width="1520" height="160" rx="8" />
+    <!-- raised center block -->
+    <rect x="-160" y="-260" width="320" height="100" rx="6" fill="#07060a" opacity="0.95" />
+  </g>
+
+  <!-- performer: dynamic pose -->
+  <g transform="translate(800,520) scale(1.3)" fill="#050308">
+    <path d="M-30 40 L-30 -30 C-30 -60 10 -60 10 -30 L10 40 Z" />
+    <circle cx="-10" cy="-70" r="18" />
+    <rect x="18" y="-80" width="8" height="70" rx="4" transform="rotate(22 22 -80)" />
+    <circle cx="28" cy="-88" r="5" fill="#fff" />
+  </g>
+
+  <!-- front neon panels and LED strips for pop vibe -->
+  <g>
+    <rect x="200" y="620" width="1200" height="180" rx="8" fill="#06040a" opacity="0.9" />
+    <rect x="240" y="640" width="240" height="140" rx="6" fill="#ff2fa0" opacity="0.15" />
+    <rect x="560" y="640" width="240" height="140" rx="6" fill="#7a2bff" opacity="0.15" />
+    <rect x="880" y="640" width="240" height="140" rx="6" fill="#1dd3ff" opacity="0.15" />
+  </g>
+
+  <!-- confetti: many small colorful pieces across the top area -->
+  <g>
+    <rect x="160" y="200" width="6" height="2" fill="#fff" transform="rotate(15 163 201)" opacity="0.95" />
+    <rect x="220" y="240" width="6" height="2" fill="#ffd7ff" transform="rotate(-20 223 241)" opacity="0.95" />
+    <rect x="320" y="190" width="6" height="2" fill="#9be2ff" transform="rotate(30 323 191)" opacity="0.95" />
+    <rect x="420" y="250" width="6" height="2" fill="#ffdf7e" transform="rotate(-10 423 251)" opacity="0.95" />
+    <rect x="620" y="180" width="6" height="2" fill="#ff9ad2" transform="rotate(5 623 181)" opacity="0.95" />
+    <rect x="820" y="210" width="6" height="2" fill="#b3fff6" transform="rotate(-35 823 211)" opacity="0.95" />
+    <rect x="1040" y="200" width="6" height="2" fill="#ffd7ff" transform="rotate(25 1043 201)" opacity="0.95" />
+    <rect x="1240" y="250" width="6" height="2" fill="#fff" transform="rotate(-5 1243 251)" opacity="0.95" />
+    <!-- repeat varied pieces -->
+  </g>
+
+  <!-- crowd silhouettes (densely packed) -->
+  <g fill="#020002" opacity="0.98">
+    <!-- rows of small rounded silhouettes -->
+    <g>
+      <ellipse cx="280" cy="770" rx="10" ry="8" />
+      <ellipse cx="340" cy="774" rx="10" ry="8" />
+      <ellipse cx="400" cy="772" rx="10" ry="8" />
+      <ellipse cx="460" cy="775" rx="10" ry="8" />
+      <ellipse cx="520" cy="773" rx="10" ry="8" />
+      <ellipse cx="580" cy="774" rx="10" ry="8" />
+      <ellipse cx="640" cy="773" rx="10" ry="8" />
+      <ellipse cx="700" cy="775" rx="10" ry="8" />
+      <ellipse cx="760" cy="774" rx="10" ry="8" />
+      <ellipse cx="820" cy="774" rx="10" ry="8" />
+      <ellipse cx="880" cy="772" rx="10" ry="8" />
+      <ellipse cx="940" cy="776" rx="10" ry="8" />
+      <ellipse cx="1000" cy="774" rx="10" ry="8" />
+    </g>
+  </g>
+
+  <!-- subtle vignette for cinematic focus -->
+  <rect width="1600" height="900" fill="#000" opacity="0.14" />
+
+  <!-- optional label, low-contrast -->
+  <text x="60" y="80" fill="#ffffff" font-size="28" font-family="Poppins, Arial, sans-serif" opacity="0.9">Live Pop Concert</text>
+</svg>
